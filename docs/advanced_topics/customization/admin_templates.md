@@ -101,6 +101,28 @@ def get_profile_avatar(user, size):
 
 Additionally, you can use the default `size` parameter that is passed in to the hook if you need to attach it to a request or do any further processing on your image.
 
+### Overriding the default user avatar image
+
+To replace the default avatar image (used as a fallback when no profile avatar or Gravatar is available), you can override the static file `wagtailadmin/images/default-user-avatar.png`.
+
+Place your custom image at the same path within one of your apps:
+
+```
+your_app/static/wagtailadmin/images/default-user-avatar.png
+```
+
+Then ensure your app is listed before `wagtail.admin` in `INSTALLED_APPS`:
+
+```python
+INSTALLED_APPS = [
+    # ...
+    'your_app',
+    'wagtail.admin',
+    # ...
+]
+```
+Django will use your image in place of Wagtail’s default. This works because Django gives precedence to earlier apps in `INSTALLED_APPS` when resolving static files. See [Django’s documentation](https://docs.djangoproject.com/en/stable/howto/overriding-templates/) for more details.
+
 (custom_user_interface_fonts)=
 
 ## Custom user interface fonts
