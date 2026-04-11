@@ -103,25 +103,8 @@ Additionally, you can use the default `size` parameter that is passed in to the 
 
 ### Overriding the default user avatar image
 
-To replace the default avatar image used when no profile avatar or Gravatar is available, you can override the static file `wagtailadmin/images/default-user-avatar.png`.
+To replace the default avatar image used when no profile avatar or Gravatar is available, override the static file `wagtailadmin/images/default-user-avatar.png` by placing your custom image at the same path within one of your apps. Ensure the app appears before `wagtail.admin` in [`INSTALLED_APPS`](https://docs.djangoproject.com/en/stable/ref/settings/#installed-apps).
 
-Place your custom image at the same path within one of your apps:
-
-```
-your_app/static/wagtailadmin/images/default-user-avatar.png
-```
-
-Then ensure your app is listed before `wagtail.admin` in `INSTALLED_APPS`:
-
-```python
-INSTALLED_APPS = [
-    # ...
-    'your_app',
-    'wagtail.admin',
-    # ...
-]
-```
-Django will use your image in place of Wagtail’s default, as earlier apps in `INSTALLED_APPS` take precedence when resolving static files.
 You can verify the override with `python manage.py findstatic wagtailadmin/images/default-user-avatar.png`.
 
 (custom_user_interface_fonts)=
