@@ -103,9 +103,9 @@ Additionally, you can use the default `size` parameter that is passed in to the 
 
 ### Overriding the default user avatar image
 
-Override `wagtailadmin/images/default-user-avatar.png` by placing your custom file at the same path within one of your apps (see Django’s [`INSTALLED_APPS`](https://docs.djangoproject.com/en/6.0/ref/settings/#installed-apps) for ordering).
+Override `wagtailadmin/images/default-user-avatar.png` by placing your custom file at the same path within one of your apps (see Django’s [`INSTALLED_APPS`](inv:django:std:setting#INSTALLED_APPS) for ordering).
 
-You can verify the override with [`findstatic`](https://docs.djangoproject.com/en/6.0/ref/contrib/staticfiles/#cmdoption-findstatic-arg-findstatic):
+You can verify the override with [`findstatic`](inv:django:std:django-admin#findstatic):
 ```
 python manage.py findstatic wagtailadmin/images/default-user-avatar.png
 ```
