@@ -109,8 +109,7 @@ You can verify the override with [`findstatic`](inv:django:std:django-admin#find
 ```
 python manage.py findstatic wagtailadmin/images/default-user-avatar.png
 ```
-
-(custom_user_interface_fonts)=
+Requires `AppDirectoriesFinder` in [`STATICFILES_FINDERS`](inv:django:std:setting#STATICFILES_FINDERS) (default).
 
 ## Custom user interface fonts
 
