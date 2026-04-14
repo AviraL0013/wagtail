@@ -111,6 +111,8 @@ python manage.py findstatic wagtailadmin/images/default-user-avatar.png
 ```
 Requires `AppDirectoriesFinder` in [`STATICFILES_FINDERS`](inv:django:std:setting#STATICFILES_FINDERS) (default).
 
+(custom_user_interface_fonts)=
+
 ## Custom user interface fonts
 
 To customize the font families used in the admin user interface, inject a CSS file using the hook [](insert_global_admin_css) and override the variables within the `:root` selector:
